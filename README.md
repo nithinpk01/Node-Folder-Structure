@@ -1,1 +1,4 @@
-# Node-Folder-Structure
+
+# Node-MongoDB Sample Project
+## npm i
+## npm run dev 

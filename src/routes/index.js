@@ -1,4 +1,5 @@
 module.exports = {
-    PingPong: require("./ping-pong")
+    PingPong: require("./ping-pong"),
+    AuthUser:require("./user")
   };
   

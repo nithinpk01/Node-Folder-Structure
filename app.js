@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config();
 const port = process.env.PORT;
 
-const { PingPong } = require("./src/routes/ping-pong");
+const { PingPong, AuthUser } = require("./src/routes");
 
 const app = express();
 
@@ -15,7 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // routes
-app.use("/",PingPong)
-app.use("/", (req,res)=>{
-    res.send("Assddd")
+app.use("/", PingPong)
+app.use("/auth/user", AuthUser)
+app.use("/", (req, res) => {
+    res.send("Welcome to Web Page")
 });
