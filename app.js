@@ -1,4 +1,5 @@
 const express = require("express");
+const  dbConfig  = require("./config/db-config");
 const bodyParser = require('body-parser')
 require('dotenv').config();
 const port = process.env.PORT;
@@ -6,6 +7,7 @@ const port = process.env.PORT;
 const { PingPong, AuthUser } = require("./src/routes");
 
 const app = express();
+dbConfig(); // db connection
 
 app.listen(port);
 
