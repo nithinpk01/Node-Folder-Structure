@@ -1,10 +1,12 @@
 const express = require("express");
 const controller = require("../controller/user-controller");
 
-const AuthUser = new express.Router();
+const User = new express.Router();
+const auth = require('../middleware/verifyToken')
 
-AuthUser.post("/login", controller.login);
-AuthUser.post("/signup", controller.signup);
-AuthUser.get("/list", controller.list);
+User.post("/login", controller.login);
+User.post("/signup", controller.signup);
+User.get("/list", auth, controller.list);
+User.get("/list/:id", auth, controller.listById);
 
-module.exports = AuthUser;
+module.exports = User;

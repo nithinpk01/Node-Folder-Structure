@@ -6,4 +6,4 @@ const PingPong = new express.Router();
 PingPong.get("/ping", controller.ping);
 PingPong.get("/pong", controller.pong);
 
-module.exports =  PingPong ;
+module.exports = PingPong;
