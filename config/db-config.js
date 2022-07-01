@@ -1,10 +1,18 @@
 const mongoose = require("mongoose");
 require('dotenv').config();
-const dbUrl= process.env.dbURL;
+const dbUrl = process.env.dbURL;
 
 module.exports = () => {
-  mongoose.connect(dbUrl,()=>{
+
+  const params = {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  };
+
+  mongoose.connect(dbUrl, params, () => {
     console.log(`DB Connected to ${dbUrl}`)
   },
-  e=>console.error(e))
+    e => console.error(e))
 };
